@@ -25,7 +25,7 @@ public class DemoDbRelationsApplication2 {
 	private AbstractDocumentService abstractDocumentService;
 
 	@PostConstruct
-	public void init() {
+	public void mijnStartMethode() {
 		TextDocument textDocument = textDocumentService.createDocument("Test");
 		textDocument.setContents("Hello");
 		textDocument.appendContent(" World");

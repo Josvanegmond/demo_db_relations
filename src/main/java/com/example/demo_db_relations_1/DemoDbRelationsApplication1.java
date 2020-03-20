@@ -18,6 +18,9 @@ public class DemoDbRelationsApplication1 {
 	@Autowired
 	private DocumentService documentService;
 
+	public DemoDbRelationsApplication1() {
+	}
+
 	@PostConstruct
 	public void init() {
 		Document document = documentService.createDocument("Test");

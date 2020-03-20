@@ -13,9 +13,6 @@ public class AbstractDocumentService {
     @Autowired
     private SpreadsheetDocumentRepository spreadsheetDocumentRepository;
 
-    public TextDocument getTextDocumentByTitle(String title) {
-        return textDocumentRepository.findByTitle(title);
-    }
 
     public void saveTextDocument(TextDocument document) {
         textDocumentRepository.save(document);
@@ -23,6 +20,11 @@ public class AbstractDocumentService {
 
     public void saveSpreadsheetDocument(SpreadsheetDocument document) {
         spreadsheetDocumentRepository.save(document);
+    }
+
+
+    public TextDocument getTextDocumentByTitle(String title) {
+        return textDocumentRepository.findByTitle(title);
     }
 
     public SpreadsheetDocument getSpreadsheetDocumentByTitle(String title) {

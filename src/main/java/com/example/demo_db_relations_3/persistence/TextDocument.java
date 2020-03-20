@@ -15,13 +15,14 @@ public class TextDocument extends AbstractDocument {
     private Long id;
 
     @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name="textblob_id")
     private List<TextBlob> textBlob = new ArrayList<>();
 
-    @ManyToMany(cascade ={CascadeType.ALL})
+    @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(
         name="attached_documents",
-        joinColumns=@JoinColumn(unique = true, name="document_id"),
-        inverseJoinColumns=@JoinColumn(unique = true, name="attachment_id"))
+        joinColumns=@JoinColumn(name="document_id"),
+        inverseJoinColumns=@JoinColumn(name="attachment_id"))
     private Set<TextDocument> attachments = new HashSet<>();
 
     @ManyToMany(mappedBy = "attachments")

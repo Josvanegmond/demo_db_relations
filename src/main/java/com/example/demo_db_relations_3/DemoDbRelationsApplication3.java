@@ -39,5 +39,4 @@ public class DemoDbRelationsApplication3 {
 		textDocumentService.saveDocument(textDocument3);
 	}
 
-
 }

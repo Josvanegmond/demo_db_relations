@@ -11,13 +11,17 @@ public class TextBlob {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column
     private int pageOrder;
 
     @Column
     @ElementCollection
     private List<String> stringList;
+
+    @ManyToOne
+    @JoinColumn(name="textblob_id")
+    private TextDocument textDocument;
 
     public TextBlob() {
         stringList = new ArrayList<>();
